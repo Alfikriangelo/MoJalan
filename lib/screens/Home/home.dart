@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mojalan/model/place_model.dart';
 import 'package:mojalan/model/tourguide_model.dart';
-import 'package:mojalan/screens/Details/details.dart';
+import 'package:mojalan/screens/Details/details_places.dart';
 import 'package:mojalan/screens/Home/widgets/recommended_places_cards.dart';
 import 'package:mojalan/screens/Home/widgets/recommended_tourguide_cards.dart';
 import 'package:mojalan/utilities/colors.dart';
@@ -180,7 +180,8 @@ class _HomeState extends State<Home> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => Details(
+                                              builder: (context) =>
+                                                  DetailsPlaces(
                                                     placeInfo: places[index],
                                                   )));
                                     },

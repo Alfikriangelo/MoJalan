@@ -2,15 +2,15 @@ import "package:flutter/material.dart";
 import "package:mojalan/model/place_model.dart";
 import "package:mojalan/utilities/colors.dart";
 
-class Details extends StatefulWidget {
+class DetailsPlaces extends StatefulWidget {
   final PlaceInfo placeInfo;
-  const Details({Key? key, required this.placeInfo}) : super(key: key);
+  const DetailsPlaces({Key? key, required this.placeInfo}) : super(key: key);
 
   @override
-  State<Details> createState() => _DetailsState();
+  State<DetailsPlaces> createState() => _DetailsState();
 }
 
-class _DetailsState extends State<Details> {
+class _DetailsState extends State<DetailsPlaces> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
