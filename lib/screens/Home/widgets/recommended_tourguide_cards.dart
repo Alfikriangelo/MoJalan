@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import "package:mojalan/model/tourguide_model.dart";
+import "package:mojalan/utilities/colors.dart";
 
 class RecommendedTourGuidesCard extends StatelessWidget {
   final TourGuideInfo tourGuideInfo;
   final VoidCallback press;
-
   const RecommendedTourGuidesCard({
     super.key,
     required this.tourGuideInfo,
@@ -13,10 +13,9 @@ class RecommendedTourGuidesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: press,
-      child: Card(
-        margin: EdgeInsets.only(top: 20),
+      child: Material(
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
@@ -82,6 +81,21 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                     ),
                                   ],
                                 ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.location_on,
+                                      color: primaryColor,
+                                    ),
+                                    Flexible(
+                                      child: Text(
+                                        tourGuideInfo.place,
+                                        overflow: TextOverflow
+                                            .ellipsis, // Jika teks terlalu panjang, tampilkan titik-titik elipsis
+                                      ),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           ),
