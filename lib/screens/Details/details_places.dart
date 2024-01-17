@@ -38,11 +38,11 @@ class _DetailsState extends State<DetailsPlaces> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: whiteColor,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 20),
+                          vertical: 30, horizontal: 20),
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +50,7 @@ class _DetailsState extends State<DetailsPlaces> {
                             Text(
                               widget.placeInfo.name,
                               style: TextStyle(
-                                fontSize: 26,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -70,7 +70,7 @@ class _DetailsState extends State<DetailsPlaces> {
                                   widget.placeInfo.location,
                                   style: TextStyle(
                                     color: Colors.grey,
-                                    fontSize: 23,
+                                    fontSize: 16,
                                   ),
                                 ),
                               ],
@@ -83,7 +83,7 @@ class _DetailsState extends State<DetailsPlaces> {
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 23,
+                                fontSize: 18,
                               ),
                             ),
                           ],

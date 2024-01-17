@@ -20,6 +20,26 @@ class Booking extends StatefulWidget {
 
 class _BookingState extends State<Booking> {
   LatLng markerLocation = LatLng(-8.713058466453584, 115.16771384904149);
+  late String startedPriceString; // Gunakan late untuk menginisialisasi nanti
+  late int startedPrice;
+  late TextEditingController daysController;
+  int totalPrice = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    startedPriceString =
+        widget.tourGuideInfo.price.toString().replaceAll(RegExp(r'[^0-9]'), '');
+    startedPrice = int.parse(startedPriceString);
+    daysController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    daysController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,9 +53,8 @@ class _BookingState extends State<Booking> {
               child: FlutterMap(
                 options: MapOptions(
                     center: markerLocation,
-                    zoom: 19,
+                    zoom: 15,
                     onPositionChanged: (MapPosition position, bool hasGesture) {
-                      // Mengupdate posisi marker saat peta digeser
                       setState(() {
                         markerLocation = position.center as LatLng;
                       });
@@ -82,11 +101,20 @@ class _BookingState extends State<Booking> {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20, bottom: 20, top: 20),
-                  child: Text(
-                    "Harga: Rp${NumberFormat('#,###', 'id_ID').format(widget.tourGuideInfo.price)} / Hari",
-                    style: TextStyle(
-                      fontSize: 23,
-                    ),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Harga: ",
+                        style: TextStyle(fontSize: 17, color: blackColor),
+                      ),
+                      Text(
+                        "Rp${NumberFormat('#,###', 'id_ID').format(widget.tourGuideInfo.price)} / Hari",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17,
+                            color: const Color.fromARGB(255, 126, 224, 129)),
+                      ),
+                    ],
                   ),
                 ),
                 TextButton(
@@ -104,7 +132,7 @@ class _BookingState extends State<Booking> {
                   },
                   child: Text(
                     'Pesan',
-                    style: TextStyle(fontSize: 23),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ],

@@ -117,21 +117,22 @@ class _HomeState extends State<Home> {
                               ],
                             ),
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                color: primaryColor,
-                              ),
-                              SizedBox(
-                                  width:
-                                      8), // Memberikan sedikit ruang antara ikon dan teks
-                              Text(
-                                "Bali",
-                                style: TextStyle(fontSize: 20),
-                              )
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(
+                                  Icons.location_on,
+                                  color: primaryColor,
+                                  size: 20,
+                                ),
+                                Text(
+                                  "Bali",
+                                  style: TextStyle(fontSize: 16),
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),

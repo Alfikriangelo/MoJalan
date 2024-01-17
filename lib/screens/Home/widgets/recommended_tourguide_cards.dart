@@ -35,9 +35,8 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                   width: double.infinity,
                   child: Row(
                     children: [
-                      // Bagian Gambar (1/4 dari lebar container)
                       Container(
-                        width: 190, // 1/4 dari lebar container
+                        width: 150, // 1/4 dari lebar container
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
@@ -65,18 +64,26 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
-                                      tourGuideInfo.rating.toString(),
-                                      style: TextStyle(
-                                        fontSize: 20,
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 8),
+                                      child: Text(
+                                        tourGuideInfo.rating.toString(),
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
                                       ),
                                     ),
-                                    Image.asset(
-                                      "assets/icons/star.png", // Menggunakan `Image.asset` untuk asset lokal
-                                      height:
-                                          18, // Sesuaikan tinggi gambar sesuai kebutuhan
-                                      width:
-                                          18, // Sesuaikan lebar gambar sesuai kebutuhan
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 5, bottom: 5),
+                                      child: Image.asset(
+                                        "assets/icons/star.png", // Menggunakan `Image.asset` untuk asset lokal
+                                        height:
+                                            18, // Sesuaikan tinggi gambar sesuai kebutuhan
+                                        width:
+                                            18, // Sesuaikan lebar gambar sesuai kebutuhan
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -85,13 +92,14 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                     Icon(
                                       Icons.location_on,
                                       color: primaryColor,
+                                      size: 20,
                                     ),
                                     Flexible(
                                       child: Text(
                                         tourGuideInfo.place,
                                         style: TextStyle(
                                           fontWeight: FontWeight.normal,
-                                          fontSize: 20,
+                                          fontSize: 16,
                                         ),
                                         overflow: TextOverflow
                                             .ellipsis, // Jika teks terlalu panjang, tampilkan titik-titik elipsis

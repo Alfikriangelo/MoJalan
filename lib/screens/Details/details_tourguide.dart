@@ -45,14 +45,14 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: whiteColor,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(15),
                     ),
                     child: ListView(
                       physics: BouncingScrollPhysics(),
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(
-                              vertical: 20, horizontal: 20),
+                              vertical: 30, horizontal: 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -68,7 +68,7 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                 children: [
                                   Text(
                                     widget.tourGuideInfo.rating.toString(),
-                                    style: TextStyle(fontSize: 23),
+                                    style: TextStyle(fontSize: 18),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 5),
@@ -83,7 +83,7 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                         left: 10, right: 5),
                                     child: Text(
                                       widget.tourGuideInfo.verified,
-                                      style: TextStyle(fontSize: 23),
+                                      style: TextStyle(fontSize: 18),
                                     ),
                                   ),
                                   Image.asset(
@@ -105,7 +105,7 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                   ),
                                   Text(
                                     widget.tourGuideInfo.place,
-                                    style: TextStyle(fontSize: 23),
+                                    style: TextStyle(fontSize: 16),
                                   ),
                                 ],
                               ),
@@ -126,13 +126,14 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                       child: Text(
                                         expertise,
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 20),
+                                            color: Colors.white, fontSize: 18),
                                       ),
                                     ),
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 20),
+                                padding:
+                                    const EdgeInsets.only(top: 20, bottom: 10),
                                 child: Text(
                                   "Halo, aku ${widget.tourGuideInfo.name}",
                                   style: TextStyle(
@@ -144,7 +145,7 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                 widget.tourGuideInfo.introduce,
                                 textAlign: TextAlign.justify,
                                 style: TextStyle(
-                                  fontSize: 23,
+                                  fontSize: 18,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -155,40 +156,52 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                                 "Bahasa: ${widget.tourGuideInfo.language.join(', ')}",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 23,
+                                    fontSize: 20,
                                     color: Color.fromARGB(255, 87, 111, 227)),
                               ),
-                              Text(
-                                "Harga: Rp${NumberFormat('#,###', 'id_ID').format(widget.tourGuideInfo.price)} / Hari",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 23,
-                                    color: const Color.fromARGB(
-                                        255, 126, 224, 129)),
+                              SizedBox(
+                                height: 15,
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 20),
-                                child: Wrap(
-                                  spacing: 5,
-                                  children: [
-                                    for (String imagePath
-                                        in widget.tourGuideInfo.experience)
-                                      Container(
-                                        margin: EdgeInsets.only(left: 5),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Image.asset(
-                                            imagePath,
-                                            height: 150,
-                                            width: 150,
-                                            fit: BoxFit.cover,
-                                          ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Harga: ",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17,
+                                        color: blackColor),
+                                  ),
+                                  Text(
+                                    "Rp${NumberFormat('#,###', 'id_ID').format(widget.tourGuideInfo.price)} / Hari",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17,
+                                        color: const Color.fromARGB(
+                                            255, 126, 224, 129)),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Wrap(
+                                spacing: 5,
+                                children: [
+                                  for (String imagePath
+                                      in widget.tourGuideInfo.experience)
+                                    Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.asset(
+                                          imagePath,
+                                          height: 150,
+                                          width: 150,
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
-                                  ],
-                                ),
+                                    ),
+                                ],
                               ),
                             ],
                           ),
@@ -217,7 +230,7 @@ class _DetailsTourguidesState extends State<DetailsTourguides> {
                   },
                   child: Text(
                     'Pilih',
-                    style: TextStyle(fontSize: 23),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
               ],
