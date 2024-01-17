@@ -14,6 +14,9 @@ class _DetailsState extends State<DetailsPlaces> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Wisata"),
+      ),
       backgroundColor: whiteColor,
       body: Stack(
         children: [
@@ -26,48 +29,6 @@ class _DetailsState extends State<DetailsPlaces> {
           SafeArea(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 10),
-                          child: Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(15)),
-                            child: Center(
-                              child: Icon(
-                                Icons.arrow_back,
-                                color: blackColor,
-                                size: 20,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            "Wisata",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: whiteColor),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.3,
                 ),
@@ -109,7 +70,7 @@ class _DetailsState extends State<DetailsPlaces> {
                                   widget.placeInfo.location,
                                   style: TextStyle(
                                     color: Colors.grey,
-                                    fontSize: 20,
+                                    fontSize: 23,
                                   ),
                                 ),
                               ],
@@ -122,7 +83,7 @@ class _DetailsState extends State<DetailsPlaces> {
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 18,
+                                fontSize: 23,
                               ),
                             ),
                           ],

@@ -49,7 +49,7 @@ class RecommendedPlacesCard extends StatelessWidget {
                     child: Text(
                       placeInfo.name,
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],

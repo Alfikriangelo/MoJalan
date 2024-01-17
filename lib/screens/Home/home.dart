@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
         backgroundColor: whiteColor,
         bottomNavigationBar: SafeArea(
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.1,
+            height: 70,
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,20 +99,41 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         width: 15,
                       ),
-                      RichText(
-                        text: const TextSpan(
-                          text: "Halo",
-                          style: TextStyle(color: blackColor, fontSize: 18),
-                          children: [
-                            TextSpan(
-                              text: ", Galih",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: const TextSpan(
+                              text: "Halo",
+                              style: TextStyle(color: blackColor, fontSize: 20),
+                              children: [
+                                TextSpan(
+                                  text: ", Galih",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: primaryColor,
+                              ),
+                              SizedBox(
+                                  width:
+                                      8), // Memberikan sedikit ruang antara ikon dan teks
+                              Text(
+                                "Bali",
+                                style: TextStyle(fontSize: 20),
+                              )
+                            ],
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -203,28 +224,28 @@ class _HomeState extends State<Home> {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
                   Container(
                     height: MediaQuery.of(context).size.height * 0.6,
                     child: ListView.builder(
                       itemCount: tourguides.length,
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      padding:
-                          const EdgeInsets.only(bottom: 20), // Tambahkan ini
                       itemBuilder: (context, index) {
-                        return RecommendedTourGuidesCard(
-                          tourGuideInfo: tourguides[index],
-                          press: () {
-                            Navigator.push(
+                        return Container(
+                          margin: EdgeInsets.only(top: 20), // Tambahkan ini
+                          child: RecommendedTourGuidesCard(
+                            tourGuideInfo: tourguides[index],
+                            press: () {
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => DetailsTourguides(
-                                          tourGuideInfo: tourguides[index],
-                                        )));
-                          },
+                                  builder: (context) => DetailsTourguides(
+                                    tourGuideInfo: tourguides[index],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                         );
                       },
                     ),

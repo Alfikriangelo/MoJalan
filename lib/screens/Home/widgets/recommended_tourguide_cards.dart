@@ -59,7 +59,7 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                 Text(
                                   tourGuideInfo.name,
                                   style: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -68,8 +68,7 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                     Text(
                                       tourGuideInfo.rating.toString(),
                                       style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
                                       ),
                                     ),
                                     Image.asset(
@@ -90,6 +89,10 @@ class RecommendedTourGuidesCard extends StatelessWidget {
                                     Flexible(
                                       child: Text(
                                         tourGuideInfo.place,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 20,
+                                        ),
                                         overflow: TextOverflow
                                             .ellipsis, // Jika teks terlalu panjang, tampilkan titik-titik elipsis
                                       ),
