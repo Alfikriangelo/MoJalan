@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mojalan/api/api_service.dart';
 import 'package:mojalan/model/place_model.dart';
 import 'package:mojalan/model/tourguide_model.dart';
 import 'package:mojalan/screens/Details/details_places.dart';
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Menyembunyikan keyboard saat mengetuk di luar TextField
+        // Hiding the keyboard when tapping outside TextField
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
@@ -187,32 +188,49 @@ class _HomeState extends State<Home> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Container(
-                      height: 220,
-                      child: ListView.builder(
-                          itemCount: places.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 20),
-                              child: Row(
-                                children: [
-                                  RecommendedPlacesCard(
-                                    placeInfo: places[index],
-                                    press: () {
-                                      Navigator.push(
+                  // Modify the FutureBuilder to fetch a list of places
+                  FutureBuilder<List<PlaceInfo>>(
+                    future: ApiService.fetchPlacesData(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return Center(child: CircularProgressIndicator());
+                      } else if (snapshot.hasError) {
+                        return Center(child: Text('Error: ${snapshot.error}'));
+                      } else {
+                        List<PlaceInfo> places = snapshot.data!;
+
+                        return Container(
+                          height: 220,
+                          child: ListView.builder(
+                            itemCount: places.length,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 20),
+                                child: Row(
+                                  children: [
+                                    RecommendedPlacesCard(
+                                      placeInfo: places[index],
+                                      press: () {
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  DetailsPlaces(
-                                                    placeInfo: places[index],
-                                                  )));
-                                    },
-                                  ),
-                                ],
-                              ),
-                            );
-                          })),
+                                            builder: (context) => DetailsPlaces(
+                                              placeInfo: places[index],
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        );
+                      }
+                    },
+                  ),
                   const SizedBox(
                     height: 25,
                   ),
@@ -233,7 +251,7 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.only(top: 20), // Tambahkan ini
+                          margin: EdgeInsets.only(top: 20),
                           child: RecommendedTourGuidesCard(
                             tourGuideInfo: tourguides[index],
                             press: () {

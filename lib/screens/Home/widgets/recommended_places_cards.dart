@@ -1,16 +1,19 @@
 import "package:flutter/material.dart";
 import "package:mojalan/model/place_model.dart";
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 import "../../../utilities/colors.dart";
 
 class RecommendedPlacesCard extends StatelessWidget {
   final PlaceInfo placeInfo;
   final VoidCallback press;
+
   const RecommendedPlacesCard({
-    super.key,
+    Key? key,
     required this.placeInfo,
     required this.press,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class RecommendedPlacesCard extends StatelessWidget {
           height: 210,
           width: 200,
           decoration: BoxDecoration(
-            color: whiteColor,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Column(
@@ -48,8 +51,10 @@ class RecommendedPlacesCard extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: Text(
                       placeInfo.name,
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
