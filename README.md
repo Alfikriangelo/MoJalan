@@ -1,18 +1,29 @@
-# mojalan
+**PentaCode Team**
 
-A new Flutter project.
+Sistem ini dibuat agar dapat membantu wisatawan dalam menemukan tour guide sesuai dengan preferensi mereka dan membantu wisatawan dalam melakukan  perencanaan  perjalanan sesuai preferensi, kebutuhan, dan budget.
 
-## Getting Started
+Teknologi yang digunakan:
+- Flutter
+- Firebase
+- Android
 
-This project is a starting point for a Flutter application.
+cara menjalankan code:
+- install flutter melalui link berikut : https://docs.flutter.dev/get-started/install/windows/mobile?tab=download
+- install extension flutter di visual studio code
+- install emulator android
+- install dependecies yang dibutuhkan melalui flutter pub add
+- jalankan di cmd visual studio code dengan mengetik "flutter run"
 
-A few resources to get you started if this is your first Flutter project:
+  
+<!-- maps -->
+<img src="https://github.com/Alfikriangelo/MoJalan/assets/83638938/deb33938-67a1-4c66-bb6d-0ef0239be09c" alt="maps" width="200">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<!-- home -->
+<img src="https://github.com/Alfikriangelo/MoJalan/assets/83638938/4c88350b-4ce7-44fe-9706-9b127f74d1f8" alt="home" width="200">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# MoJalan
-# MoJalan
+<!-- detailTourguide -->
+<img src="https://github.com/Alfikriangelo/MoJalan/assets/83638938/347eff81-4abe-4d81-af55-9c5d66dad9a7" alt="detailTourguide" width="200">
+
+<!-- detailPlace -->
+<img src="https://github.com/Alfikriangelo/MoJalan/assets/83638938/c3f3e8f4-5c49-4843-97f2-8ef96a124985" alt="detailPlace" width="200">
+
