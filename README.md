@@ -1,18 +1,22 @@
 **PentaCode Team**
 
-Sistem ini dibuat agar dapat membantu wisatawan dalam menemukan tour guide sesuai dengan preferensi mereka dan membantu wisatawan dalam melakukan  perencanaan  perjalanan sesuai preferensi, kebutuhan, dan budget.
+This idea is designed to provide appropriate support to tourists in planning their trips. Through its functionality, this idea can help tourists find a tour guide that suits their preferences. This includes factors such as the languages spoken by the tour guide, knowledge of the particular tourist destination, and interpersonal skills that tourists may desire.
 
-Teknologi yang digunakan:
+Furthermore, this idea not only focuses on finding a tour guide, but also provides comprehensive travel planning services. Travelers can enter their personal preferences, such as the type of activities they want, the places they want to visit, the duration of their trip and their budget. Based on this information, ideas will result in a personalized itinerary for each individual or group of travelers.
+
+Taking into account preferences, needs and budget, the idea aims to provide an optimal and satisfying travel experience. In other words, this idea not only functions as a tour guide search tool, but also as a comprehensive travel assistant, helping tourists plan and manage their trips more easily and effectively.
+
+Technology used:
 - Flutter
 - Firebase
 - Android
 
-cara menjalankan code:
-- install flutter melalui link berikut : https://docs.flutter.dev/get-started/install/windows/mobile?tab=download
-- install extension flutter di visual studio code
-- install emulator android
-- install dependecies yang dibutuhkan melalui flutter pub add
-- jalankan di cmd visual studio code dengan mengetik "flutter run"
+how to run the code:
+- install flutter via the following link: https://docs.flutter.dev/get-started/install/windows/mobile?tab=download
+- install the flutter extension in visual studio code
+- install android emulator
+- install the required dependencies via flutter pub add
+- run in cmd visual studio code by typing "flutter run"
 
   
 <!-- maps -->
